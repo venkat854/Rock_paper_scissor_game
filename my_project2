@@ -1,0 +1,52 @@
+import random
+choices = ["Rock","Paper","Scissor"]
+computer = random.choice(choices)
+cpu_score = 0
+player_score = 0
+while True:
+   player = input("Rock,Paper,Scissor?").capitalize()
+   if player == computer:
+       print("Tie!")
+   elif player == "Rock":
+       if computer == "Paper":
+           print("you lose!", computer, "covers", player)
+           cpu_score +=1
+       else:
+           print("you win!", player, "smashes", computer)
+           player_score +=1
+   elif player == "Paper":
+       if computer == "Scissor":
+           print("you lose!",computer, "cuts", player)
+           cpu_score +=1
+       else:
+           print("you win!", player, "covers", computer)
+           player_score +=1
+   elif player == "Scissor":
+       if computer == "Rock":
+           print("you lose...",computer, "smashes", player)
+           cpu_score +=1
+       else:
+           print("you win!", player, "cuts", computer)
+           player_score +=1
+   else:
+      print("You have choosen out of list...")
+      continue
+   next_turn = input("You wanna play it again(yes/no)?").lower()
+   if next_turn == "yes":
+      continue
+   else:
+      print("Final Scores:")
+      print(f"CPU:{cpu_score}")
+      print(f"Player:{player_score}")
+      break
+
+
+            
+
+
+
+
+
+
+
+            
